@@ -1,0 +1,19 @@
+def Goldbach(n):
+    prime_list=[]
+    final_list=[]
+    flag=False
+    (i,j)=(0,1)
+    for i in range(n):
+        for j in range(j+1,i):
+            if(i%j==0):
+                Flag=True
+                break
+            else:
+                flag=False
+        if(flag==False):
+            prime_list.append(i)
+    for l in range(len(prime_list)):
+        for m in range(l+1,len(prime_list)):
+            if(prime_list[l]+prime_list[m]==n):
+                final_list.append((prime_list[l],prime_list[m]))
+    return final_list
